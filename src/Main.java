@@ -11,8 +11,9 @@ public class Main {
         while (!end) {
             System.out.println("Menu:");
             System.out.println("1. Añadir Libro");
-            System.out.println("2. Ver lista de libros");
-            System.out.println("3. Salir");
+            System.out.println("2. Eliminar Libro");
+            System.out.println("3. Ver lista de Libros");
+            System.out.println("4. Salir");
 
             System.out.println("Introduce tu opcion: ");
             int option = teclat.nextInt();
@@ -21,12 +22,16 @@ public class Main {
             if (option == 1) {
                 Libro.addLibro(lista);
             }else if (option == 2) {
-                for (int i=0;i<lista.size();i++) {
-                    System.out.println(lista.get(i).toString());
+                deleteLibro();
                 }
 
             }else if (option == 3) {
-                end=true;
+                for (int i=0;i<lista.size();i++) {
+                    System.out.println(lista.get(i).toString());
+                }
+            }
+            else if (option == 4) {
+                end = true;
             }
         }
     }

@@ -140,5 +140,31 @@ public class Libro{
         lista.add(lib);
     }
 
+    //Eliminar Libro
+
+    public static void deleteLibro(ArrayList<Libro> lista) {
+        Scanner teclat = new Scanner(System.in);
+        System.out.println("Introduce ISBN del libro a eliminar: ");
+        int ISBN = teclat.nextInt();
+        teclat.nextLine();
+
+        boolean encontrado = false;
+        int i = 0;
+        Libro libro;
+        while(!encontrado && i < lista.size()) {
+            libro = lista.get(i);
+            if (libro.getISBN() == (ISBN)) {
+                lista.remove(i);
+                encontrado = true;
+            } else {
+                i++;
+            }
+        }
+        if (encontrado) {
+            System.out.println("Libro eliminado");
+        } else {
+            System.out.println("Libro no encontrado");
+        }
+    }
 
 }
